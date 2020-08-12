@@ -75,13 +75,16 @@ class PeoplePipeline(object):
             item['Questions answered'] =0
         try:
             item['Positive reviews']=int(item['Positive reviews'].split()[2].replace(',',''))
-        except:
+        except AttributeError:
             item['Positive reviews'] = 0
         try:
             item['Critical reviews']=int(item['Critical reviews'].split()[2].replace(',',''))
-        except:
+        except AttributeError:
             item['Critical reviews'] = 0
-        item['Total reviews']=int(item['Total reviews'].split()[-2].replace(',',''))
+        try:
+            item['Total reviews']=int(item['Total reviews'].split()[-2].replace(',',''))
+        except AttributeError:
+            item['Total reviews'] = 0
 
         self.connection.execute(db.insert(self.AISNs) ,
                                 {'AISN':item['AISN']})

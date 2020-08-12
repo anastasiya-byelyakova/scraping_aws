@@ -28,6 +28,6 @@ DATABASE_IP='localhost'
 DATABASE_NAME='aws_aisn'
 DOWNLOAD_DELAY=30
 CONCURRENT_REQUESTS=1
-DOWNLOADER_MIDDLEWARES = {
-    'aws.middlewares.SeleniumMiddleware': 200
-}
+# DOWNLOADER_MIDDLEWARES = {
+#     'aws.middlewares.SeleniumMiddleware': 200
+# }
